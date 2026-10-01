@@ -9,7 +9,8 @@ import tempfile
 import threading
 import time
 
-ROOT = Path(__file__).resolve().parent.parent
+from .runtime import default_data_dir
+
 _status_cache: tuple[float, dict] = (0, {})
 _status_lock = threading.Lock()
 
@@ -98,7 +99,7 @@ def generate(prompt: str, image_path: str | None = None, *, image_paths: list[st
         raise ValueError("请求为空或过长，请减少资料长度。")
     if not get_status()["authenticated"]:
         raise RuntimeError("Codex 尚未登录，请在终端运行 codex login 后重试。")
-    data_dir = Path(os.environ.get("STUDY_DATA_DIR", ROOT / ".study-data"))
+    data_dir = default_data_dir()
     work_dir = data_dir / "codex-workdir"
     work_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="request-", dir=work_dir) as temp:

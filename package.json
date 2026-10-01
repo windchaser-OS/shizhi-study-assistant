@@ -2,7 +2,7 @@
   "name": "shizhi-study-space",
   "version": "1.0.0",
   "private": true,
-  "description": "Local Obsidian learning assistant powered by the official Codex CLI",
+  "description": "Local Obsidian learning assistant with switchable API key profiles and optional Codex CLI",
   "scripts": {
     "start": "python -m study_app.server",
     "test": "python -m unittest discover -s tests -v",

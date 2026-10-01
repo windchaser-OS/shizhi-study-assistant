@@ -40,3 +40,9 @@ desktop.ini
 **/.obsidian/cache/
 **/.trash/
 
+
+# Windows release build environments and artifacts
+.venv-build/
+/build/
+/dist/
+

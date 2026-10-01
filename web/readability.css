@@ -55,7 +55,63 @@
 .classification-path{padding:12px 14px;background:#eff2e6;border-radius:6px;font-size:13px;overflow-wrap:anywhere;margin-bottom:10px}
 .subject-filters{align-items:center;margin-top:-6px}
 .subject-filters>.small-muted{margin-right:6px}
+/* Provider profiles use the same paper and sage palette as the learning space. */
+.ai-mode-switch{display:flex;gap:4px;padding:4px;background:#edf0e5;border:1px solid #dde3d2;border-radius:8px;margin-bottom:18px}
+.ai-mode-switch button{flex:1;min-height:42px;padding:8px 12px;border-radius:5px;background:transparent;color:#607257;font-size:13px}
+.ai-mode-switch button[aria-pressed="true"]{background:#fffefa;box-shadow:0 2px 7px #365c4710;color:var(--green);font-weight:600}
+.ai-detail{line-height:1.8;margin-top:12px;overflow-wrap:anywhere}
+.ai-refresh-button{margin-top:16px}
+.ai-providers-panel{grid-column:1/-1}
+.ai-section-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px}
+.ai-section-heading .settings-title{margin-bottom:0}
+.ai-profile-count{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border-radius:5px;background:#edf0e3;font-size:12px;font-weight:500;margin-left:5px;vertical-align:middle}
+.ai-provider-intro{line-height:1.8;margin-bottom:20px;color:#687364}
+.ai-profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ai-profile-card{min-width:0;border:1px solid #dfe5d5;border-radius:9px;padding:21px;background:#fffef8;transition:border-color .2s}
+.ai-profile-card.is-active{border-color:#8ca17b;background:#f4f7ed;box-shadow:0 0 0 1px #8ca17b24}
+.ai-profile-heading{display:flex;align-items:center;gap:11px;min-width:0}
+.ai-provider-icon{display:flex;align-items:center;justify-content:center;width:36px;height:36px;background:#e8eddf;color:#5c7950;border-radius:8px;flex-shrink:0}
+.ai-profile-heading>div{flex:1;min-width:0}
+.ai-profile-heading h3{font-size:16px;font-weight:600;line-height:1.6;overflow-wrap:anywhere}
+.ai-profile-heading>div>span{display:block;font-size:11px;line-height:1.7;color:#697962;margin-top:2px}
+.ai-profile-badge{align-self:flex-start;display:inline-flex;border-radius:5px;padding:5px 8px;background:#dce8d0;color:#365c47;font-size:11px;line-height:1.5;white-space:nowrap}
+.ai-profile-saved{color:#707a65;background:#edf0e4}
+.ai-profile-details{display:grid;gap:10px;margin:19px 0 16px}
+.ai-profile-details>div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;font-size:12px;line-height:1.8}
+.ai-profile-details dt{color:#697962}
+.ai-profile-details dd{margin:0;color:#40543d;overflow-wrap:anywhere;font-family:Consolas,"Microsoft YaHei",monospace}
+.ai-profile-test{display:flex;align-items:flex-start;gap:7px;min-height:30px;color:#617457;font-size:12px;line-height:1.8;overflow-wrap:anywhere}
+.ai-profile-test .icon{width:15px;height:15px;margin-top:3px}
+.ai-profile-test.is-error,.ai-form-status.is-error{color:#a14836}
+.ai-profile-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:14px;border-top:1px solid #e2e7d8}
+.ai-profile-actions .button{padding:8px 11px;min-height:40px;font-size:12px;gap:6px}
+.ai-profile-actions .button .icon{width:15px;height:15px}
+.ai-delete-button{background:transparent;padding:9px 6px;min-height:40px;font-size:12px;color:#926c54;margin-left:auto}
+.ai-delete-button:hover{color:#a14836;text-decoration:underline}
+.ai-test-notice{line-height:1.9;color:#687364;margin-top:18px}
+.ai-operation-status,.ai-loading{display:flex;align-items:center;gap:10px;font-size:13px;color:#41623c;line-height:1.8;margin-top:12px}
+.ai-operation-status:empty{display:none}
+.ai-operation-status .spinner,.ai-loading .spinner{width:18px;height:18px;border-width:2px;flex-shrink:0}
+.ai-provider-empty{display:flex;align-items:center;gap:18px;padding:24px;border:1px dashed #c4cfb8;border-radius:8px;background:#f8faf2}
+.ai-provider-empty>.icon{width:30px;height:30px;color:#7e9470}
+.ai-provider-empty>div{flex:1;min-width:0}
+.ai-provider-empty h3{font-size:16px;line-height:1.8;margin-bottom:6px;font-weight:500}
+.ai-provider-empty p{font-size:13px;line-height:1.9;color:#687364}
+.ai-form-intro{font-size:13px;color:#687364;line-height:1.9;margin-top:14px}
+.ai-field-help{font-size:12px;line-height:1.8;color:#687364;margin-top:8px;overflow-wrap:anywhere}
+.ai-model-field{display:flex;gap:10px;align-items:stretch}
+.ai-model-field>.input{flex:1;min-width:0}
+.ai-model-field>.button{flex-shrink:0;font-size:12px}
+.ai-model-choice{margin-top:8px}
+.ai-form-status{font-size:13px;line-height:1.8;color:#41623c;overflow-wrap:anywhere;margin-top:16px}
+.ai-form-status:empty{display:none}
+.ai-close-confirm{background:#fff4e4;border:1px solid #dbc597;border-radius:6px;padding:14px;margin-top:16px}
+.ai-close-confirm p{font-size:13px;line-height:1.8;color:#725724;margin-bottom:12px}
+.ai-close-confirm>div{display:flex;gap:10px;flex-wrap:wrap}
+select:focus-visible{outline:3px solid #97af89;outline-offset:3px}
+@media(max-width:850px){.ai-profile-grid{grid-template-columns:1fr}.ai-provider-empty{align-items:flex-start;flex-wrap:wrap}.ai-provider-empty>.button{margin-left:48px}}
 @media(max-width:700px){
+ .ai-section-heading{align-items:flex-start;flex-wrap:wrap}.ai-section-heading>.button{width:100%}.ai-profile-card{padding:18px}.ai-profile-actions .button{font-size:12px;min-height:42px}.ai-providers-panel{grid-column:auto}.ai-profile-heading{align-items:flex-start}.ai-profile-badge{padding:4px 6px}.ai-model-field{flex-direction:column}.ai-model-field>.button{align-self:flex-start}.ai-provider-empty{padding:18px;gap:12px}.ai-provider-empty>.button{margin-left:0;width:100%}.ai-field-help{font-size:12px}.ai-close-confirm .button{flex:1}.ai-mode-switch button{font-size:13px}
  .classification-heading{align-items:flex-start}.classification-heading>.button{width:100%}.classification-fields{gap:10px}
  .draft-materials{padding:12px}.draft-upload{padding:14px;gap:10px}.draft-generate-row{align-items:flex-start;flex-direction:column}.draft-generate-row>.button{width:100%}
  .page-heading p,.welcome-copy p,.hero-footnote{font-size:13px}

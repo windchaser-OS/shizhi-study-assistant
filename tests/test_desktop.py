@@ -19,7 +19,7 @@ from study_app.desktop import (DesktopWindow, InstanceController, InstanceLock, 
 class DesktopTests(unittest.TestCase):
     def test_lock_prevents_another_process_then_releases(self):
         with tempfile.TemporaryDirectory() as temporary:
-            path = Path(temporary) / "desktop.lock"
+            path = Path(temporary).resolve() / "desktop.lock"
             owner = InstanceLock(path)
             self.assertTrue(owner.acquire())
             code = ("from pathlib import Path; import sys; from study_app.desktop import InstanceLock; "
@@ -35,7 +35,7 @@ class DesktopTests(unittest.TestCase):
 
     def test_instance_reopen_uses_authenticated_lightweight_channel(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
+            root = Path(temporary).resolve()
             events = queue.Queue()
             controller = InstanceController(root, events)
             try:
@@ -52,7 +52,7 @@ class DesktopTests(unittest.TestCase):
 
     def test_occupied_port_falls_back_to_loopback_and_closes(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
+            root = Path(temporary).resolve()
             occupied = socket.socket()
             occupied.bind(("127.0.0.1", 0))
             occupied.listen(1)
@@ -78,7 +78,9 @@ class DesktopTests(unittest.TestCase):
 
     def test_vault_selection_is_saved_and_missing_directory_is_reported(self):
         with tempfile.TemporaryDirectory() as temporary, patch.dict(os.environ, {}, clear=True):
-            root = Path(temporary)
+            # Windows CI may spell TEMP using an 8.3 alias; settings store
+            # resolved paths, so compare against the same filesystem spelling.
+            root = Path(temporary).resolve()
             vault = root / "my-existing-vault"
             vault.mkdir()
             save_vault(root / "data", vault)
@@ -90,7 +92,7 @@ class DesktopTests(unittest.TestCase):
 
     def test_smoke_uses_only_temporary_user_data_and_extracts_real_pdf(self):
         with tempfile.TemporaryDirectory() as temporary:
-            sentinel = Path(temporary) / "uncreated-personal-data"
+            sentinel = Path(temporary).resolve() / "uncreated-personal-data"
             with patch.dict(os.environ, {"STUDY_DATA_DIR": str(sentinel), "STUDY_VAULT": str(sentinel)}):
                 result = smoke_test()
             self.assertTrue(result["ok"])
@@ -101,7 +103,7 @@ class DesktopTests(unittest.TestCase):
 
     def test_unwritable_data_path_produces_readable_startup_error(self):
         with tempfile.TemporaryDirectory() as temporary:
-            path = Path(temporary) / "a-file"
+            path = Path(temporary).resolve() / "a-file"
             path.write_text("not a directory", encoding="utf-8")
             with patch("study_app.desktop._startup_error") as show_error, self.assertLogs("study.desktop", level="ERROR"):
                 self.assertEqual(main(["--data-dir", str(path)]), 1)

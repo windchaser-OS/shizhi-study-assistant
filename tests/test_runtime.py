@@ -17,7 +17,8 @@ class RuntimeTests(unittest.TestCase):
 
     def test_frozen_assets_and_user_data_are_separate(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
+            # Resolve Windows TEMP aliases before constructing expected paths.
+            root = Path(temporary).resolve()
             with (patch.object(sys, "frozen", True, create=True),
                   patch.object(sys, "_MEIPASS", str(root / "readonly-bundle"), create=True),
                   patch.dict(os.environ, {"LOCALAPPDATA": str(root / "user-profile")}, clear=True)):
@@ -28,7 +29,7 @@ class RuntimeTests(unittest.TestCase):
 
     def test_environment_overrides_work_in_frozen_mode(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
+            root = Path(temporary).resolve()
             with patch.object(sys, "frozen", True, create=True), patch.dict(os.environ, {
                 "STUDY_DATA_DIR": str(root / "custom-data"), "STUDY_VAULT": str(root / "custom-vault")
             }):

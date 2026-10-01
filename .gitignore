@@ -1,0 +1,42 @@
+# Python runtime and tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local runtime output
+*.log
+.study-app/
+.study_app/
+.study-data/
+data/
+uploads/
+tmp/
+temp/
+
+# OS/editor files
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Personal vault stays local; a clone creates an empty vault on first launch
+/obsidian/
+
+# Obsidian personal state and trash
+**/.obsidian/workspace*.json
+**/.obsidian/cache/
+**/.trash/
+

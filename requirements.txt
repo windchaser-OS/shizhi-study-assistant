@@ -1,0 +1,2 @@
+# PDF text extraction. The rest of the application uses Python's standard library.
+pypdf>=5.0,<7.0

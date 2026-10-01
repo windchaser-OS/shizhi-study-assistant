@@ -1,0 +1,96 @@
+/* Reading and touch controls stay legible at both desktop and phone widths. */
+:root{--muted:#687364;--body:#36483e}
+.panel,.note-reader,.note-context,.note-reader-layout,.markdown-body,.message-content{min-width:0;max-width:100%}
+.markdown-body{overflow-wrap:anywhere}
+.markdown-body pre{max-width:100%;overflow-x:auto}
+.markdown-body .math-block{max-width:100%;overflow-x:auto}
+.sidebar-label,.breadcrumb,.topbar-right>span,.eyebrow,.sidebar-footer{font-size:11px}
+.nav-list>a{font-size:14px}
+.page-heading p,.welcome-copy p,.hero-footnote,.stat-caption,.recent-info>span,.quick-action small{font-size:13px;color:#63745e}
+.button,.filter-chip,.text-link{font-size:13px}
+.button{min-height:42px}
+.note-card>p,.settings-description,.privacy-panel p,.question-tip p{font-size:14px;line-height:1.9}
+.note-card h3,.study-card h3{font-size:17px}
+.note-card-top>span,.note-card-bottom>span,.tag,.due-label,.card-topic,.small-muted,.muted{font-size:12px}
+.markdown-body,.message .markdown-body{font-size:16px;line-height:1.95}
+.chat-composer textarea,.input,.note-editor,.draft-textarea{font-size:15px}
+.message-label,.composer-bottom>span,.chat-footnote,.chat-panel-header>div:nth-child(2)>span{font-size:11px}
+.message-sources button,.context-action,.settings-details>div,.field-label,.connection-status,.setup-hint p{font-size:13px}
+.chat-stream{min-height:410px}
+.chat-welcome>p,.suggestion-grid button{font-size:13px}
+.suggestion-grid button{min-height:52px;white-space:normal;text-align:left}
+.settings-panel .button{white-space:normal}
+.markdown-body .katex-display{overflow-x:auto;overflow-y:hidden;padding:8px 0}
+.preview-notice,.preview-warning{font-size:13px;line-height:1.8}
+.preview-warning{padding:12px 16px;border:1px solid #dbc597;border-radius:6px;background:#fff5dd;color:#725724;margin:12px 0}
+.chat-selected-source{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#edf1e4;border-radius:6px;font-size:13px;margin-bottom:12px}
+.chat-selected-source button{margin-left:auto;background:none;min-width:28px;min-height:28px}
+.toast{font-size:13px}
+.draft-intro{font-size:14px;line-height:1.8;color:var(--muted);margin:8px 0 18px}
+.draft-materials{padding:18px;border:1px solid #dfe5d5;border-radius:8px;background:#f6f8f0}
+.draft-upload{width:100%;display:flex;align-items:center;gap:14px;text-align:left;background:#fffef8;padding:18px;border:1px dashed #a8b59b;border-radius:6px}
+.draft-upload>span{flex:1;min-width:0}
+.draft-upload strong{display:block;font-size:15px;color:var(--ink);margin-bottom:6px}
+.draft-upload small{display:block;font-size:12px;line-height:1.7;color:var(--muted)}
+.draft-file-list:empty{display:none}
+.draft-file-list{display:grid;gap:6px;margin-top:12px}
+.draft-file{display:flex;gap:10px;align-items:center;background:#e9efdf;padding:10px 12px;border-radius:5px;min-width:0}
+.draft-file>span{flex:1;min-width:0}
+.draft-file strong{display:block;font-size:13px;font-weight:500;overflow-wrap:anywhere}
+.draft-file small{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+.draft-instructions{min-height:68px;resize:vertical}
+.draft-generate-row{display:flex;align-items:center;gap:12px;margin-top:14px}
+.draft-generate-row>span{font-size:11px;line-height:1.7;color:var(--muted)}
+.draft-status{display:flex;align-items:center;gap:10px;font-size:13px;line-height:1.8;color:#41623c;margin-top:12px;overflow-wrap:anywhere}
+.draft-status:empty{display:none}
+.draft-status .spinner{width:18px;height:18px;border-width:2px;flex-shrink:0}
+.draft-status.draft-error{color:#a14836}
+.draft-classification{margin:20px 0 0;padding:16px;border:1px solid #dce5d2;background:#f1f5e9;border-radius:8px}
+.classification-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.classification-toggle{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6;color:var(--ink);margin:12px 0;cursor:pointer}
+.classification-toggle input{width:18px;height:18px;margin-top:3px;flex-shrink:0;accent-color:var(--green)}
+.classification-toggle small{display:block;font-size:12px;line-height:1.8;color:var(--muted);margin-top:3px}
+.classification-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.classification-reason{font-size:12px;line-height:1.8;color:var(--muted);margin-top:10px;overflow-wrap:anywhere}
+.classification-path{padding:12px 14px;background:#eff2e6;border-radius:6px;font-size:13px;overflow-wrap:anywhere;margin-bottom:10px}
+.subject-filters{align-items:center;margin-top:-6px}
+.subject-filters>.small-muted{margin-right:6px}
+@media(max-width:700px){
+ .classification-heading{align-items:flex-start}.classification-heading>.button{width:100%}.classification-fields{gap:10px}
+ .draft-materials{padding:12px}.draft-upload{padding:14px;gap:10px}.draft-generate-row{align-items:flex-start;flex-direction:column}.draft-generate-row>.button{width:100%}
+ .page-heading p,.welcome-copy p,.hero-footnote{font-size:13px}
+ .page-heading h1{font-size:25px}
+ .welcome-copy h2{font-size:30px}
+ .welcome-card{min-height:305px}
+ .welcome-copy{padding:25px 22px}
+ .hero-art{opacity:.32;pointer-events:none}
+ .heading-actions{flex-wrap:wrap}
+ .button,.button-small,.note-topline .button,.modal-footer .button{font-size:13px;min-height:42px}
+ .nav-list>a{font-size:11px}
+ .nav-list .icon{width:20px;height:20px}
+ .search-field input,.input,.note-editor,.draft-textarea,.chat-composer textarea{font-size:16px}
+ .note-card h3,.study-card h3{font-size:17px}
+ .note-card>p,.settings-description,.privacy-panel p,.question-tip p{font-size:14px}
+ .note-card-bottom>span,.tag,.filter-chip,.field-label,.small-muted,.muted,.settings-details>div{font-size:12px}
+ .markdown-body,.message .markdown-body{font-size:16px}
+ .note-reader{padding:24px 20px}
+ .note-metadata>span,.message-label,.chat-panel-header>div:nth-child(2)>span{font-size:11px}
+ .chat-panel-header strong{font-size:14px}
+ .local-badge{font-size:10px}
+ .chat-welcome>p,.suggestion-grid button,.context-action{font-size:13px}
+ .suggestion-grid{grid-template-columns:1fr}
+ .suggestion-grid button{padding:12px 14px}
+ .chat-stream{height:440px;min-height:0}
+ .chat-composer{margin:0 12px}
+ .composer-bottom>span,.chat-footnote{font-size:10px}
+ .send-button{width:38px;height:38px;flex-shrink:0}
+ .review-banner h2{font-size:22px}
+ .review-banner p,.recall-hint,.rating-prompt{font-size:13px}
+ .rating-row span{font-size:14px}
+ .rating-row small{font-size:11px}
+ .settings-title p,.privacy-panel .small-muted{font-size:12px}
+ .generated-card h3{font-size:16px}
+ .generated-card .markdown-body{font-size:15px}
+ .empty-state p,.generation-loading p,.import-explanation p,.toast{font-size:13px}
+ .preview-notice,.preview-warning{font-size:13px}
+}

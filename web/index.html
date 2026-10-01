@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <meta name="description" content="拾知：连接你的 Obsidian 知识库，让学习、思考和复习自然发生。">
+  <title>拾知 · 你的学习空间</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/readability.css">
+  <link rel="stylesheet" href="/vendor/katex/katex.min.css">
+  <script defer src="/vendor/katex/katex.min.js"></script>
+  <script defer src="/vendor/katex/contrib/auto-render.min.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <a class="brand" href="#overview" aria-label="拾知首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="brand-name">拾知<small>STUDY SPACE</small></span></a>
+      <div class="sidebar-label">我的学习空间</div>
+      <nav class="nav-list">
+        <a href="#overview" data-nav="overview"><span class="nav-icon" data-icon="grid"></span><span>学习概览</span></a>
+        <a href="#library" data-nav="library"><span class="nav-icon" data-icon="book"></span><span>知识库</span><span class="nav-count" id="nav-note-count"></span></a>
+        <a href="#chat" data-nav="chat"><span class="nav-icon" data-icon="spark"></span><span>AI 导师</span></a>
+        <a href="#cards" data-nav="cards"><span class="nav-icon" data-icon="cards"></span><span>复习卡片</span><span class="nav-count" id="nav-due-count"></span></a>
+        <a href="#settings" data-nav="settings"><span class="nav-icon" data-icon="settings"></span><span>学习设置</span></a>
+      </nav>
+      <div class="sidebar-note"><span class="mini-star">✳</span><p>知识，需要一点时间<br>慢慢长成自己的样子。</p><span>A LITTLE, EVERY DAY.</span></div>
+      <div class="sidebar-footer"><span class="status-dot" id="connection-dot"></span><span id="connection-label">正在连接学习空间</span><a href="#settings" aria-label="查看连接设置">↗</a></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="breadcrumb">我的空间<span>/</span><strong id="page-name">学习概览</strong></div><div class="topbar-right"><span id="today-date"></span><button class="icon-button" data-action="global-search" aria-label="搜索知识库" title="搜索知识库"><span data-icon="search"></span></button><div class="avatar" title="本地学习空间">知</div></div></header>
+      <main id="main" tabindex="-1"><div class="loading-state"><span class="spinner"></span><p>正在打开你的学习空间…</p></div></main>
+      <footer class="page-footer"><span>拾知 · 让学过的，都有所归。</span><span>你的笔记，保存在本地。</span></footer>
+    </div>
+  </div>
+  <input type="file" id="import-file" accept=".md,.txt,.pdf,.png,.jpg,.jpeg,.webp" hidden>
+  <div id="modal" class="modal-overlay" hidden></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>
